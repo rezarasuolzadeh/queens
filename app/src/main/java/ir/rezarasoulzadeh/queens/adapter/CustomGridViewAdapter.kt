@@ -1,4 +1,4 @@
-package ir.rezarasoulzadeh.queens
+package ir.rezarasoulzadeh.queens.adapter
 
 import android.content.Context
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.AbsListView
 import android.widget.BaseAdapter
 import android.widget.ImageView
+import ir.rezarasoulzadeh.queens.R
 
 class CustomGridViewAdapter(private val context: Context, private val queens: ArrayList<Int>) : BaseAdapter() {
 

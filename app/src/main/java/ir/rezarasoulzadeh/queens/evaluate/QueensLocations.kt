@@ -1,4 +1,4 @@
-package ir.rezarasoulzadeh.queens
+package ir.rezarasoulzadeh.queens.evaluate
 
 class QueensLocations(queensLocationsString: ArrayList<String>, queensCount: Int) {
 
@@ -7,7 +7,8 @@ class QueensLocations(queensLocationsString: ArrayList<String>, queensCount: Int
     init {
         for (i in queensLocationsString.indices) {
             val section = queensLocationsString[i].split(" ")
-            queensLocations.add((section[0].toInt() * queensCount) - (queensCount % section[1].toInt()))
+            val queenLocation = (section[0].toInt() * queensCount) - (section[1].toInt() % queensCount)
+            queensLocations.add(queenLocation - 1)
         }
     }
 

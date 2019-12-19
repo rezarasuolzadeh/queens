@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import ir.rezarasoulzadeh.queens.R
 
-class CustomGridViewAdapter(private val context: Context, private val queens: ArrayList<Int>) : BaseAdapter() {
+class ChessBoardAdapter(private val context: Context, private val queens: ArrayList<Int>) : BaseAdapter() {
 
     private val cells = arrayListOf(
         R.drawable.white,

@@ -5,8 +5,9 @@ import android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
 import ir.rezarasoulzadeh.queens.R
-import ir.rezarasoulzadeh.queens.adapter.CustomGridViewAdapter
+import ir.rezarasoulzadeh.queens.adapter.ChessBoardAdapter
 import ir.rezarasoulzadeh.queens.evaluate.QueensLocations
+import ir.rezarasoulzadeh.queens.solution.Queen
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 
@@ -27,11 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         val gridView = findViewById<GridView>(R.id.chessBoard)
 
-        gridView.adapter =
-            CustomGridViewAdapter(
-                this,
-                queensLocations
-            )
+        gridView.adapter = ChessBoardAdapter(this, queensLocations)
 
         plusButton.setOnClickListener {
             val currentQueen = queenNumberTextView.text.toString().toInt()
@@ -45,17 +42,9 @@ class MainActivity : AppCompatActivity() {
 
         arrangeButton.setOnClickListener {
             queensCount = queenNumberTextView.text.toString().toInt()
-            queens = arrayListOf("1 5", "2 7", "3 1", "4 3", "5 8", "6 6", "7 4", "8 2")
-//                               [0 4,   1 6,   2 0,   3 2,   4 7,   5 5,   6 3,   7 1]
-            queensLocations = QueensLocations(
-                queens,
-                queensCount
-            ).getQueensLocations()
-            gridView.adapter =
-                CustomGridViewAdapter(
-                    this,
-                    queensLocations
-                )
+            queens = Queen.solution(queensCount)
+            queensLocations = QueensLocations(queens, queensCount).getQueensLocations()
+            gridView.adapter = ChessBoardAdapter(this, queensLocations)
         }
 
     }

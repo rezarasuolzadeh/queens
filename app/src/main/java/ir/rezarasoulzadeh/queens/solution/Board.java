@@ -108,9 +108,9 @@ public class Board {
         for (int j = 0; j < n; j++) {
             for (int i = 0; i < n; i++) {
                 if (i == n - 1 && queens[i] == j) {
-                    array.add((j + 1) + " " + (i + 1));
+                    array.add(j + " " + i);
                 } else if (queens[i] == j) {
-                    array.add((j + 1) + " " + (i + 1));
+                    array.add(j + " " + i);
                 }
             }
         }

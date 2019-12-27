@@ -7,8 +7,8 @@ class QueensLocations(queensLocationsString: ArrayList<String>, queensCount: Int
     init {
         for (i in queensLocationsString.indices) {
             val section = queensLocationsString[i].split(" ")
-            val queenLocation = (section[0].toInt() * queensCount) - (section[1].toInt() % queensCount)
-            queensLocations.add(queenLocation - 1)
+            val queenLocation = (section[0].toInt() * queensCount) + (section[1].toInt() % queensCount)
+            queensLocations.add(queenLocation)
         }
     }
 

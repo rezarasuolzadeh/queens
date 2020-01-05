@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         val gridView = findViewById<GridView>(R.id.chessBoard)
 
-        gridView.adapter = ChessBoardAdapter(this, queensLocations)
+//        gridView.adapter = ChessBoardAdapter(this, queensLocations)
 
         val context = this.applicationContext!!
         val inflater = this.layoutInflater

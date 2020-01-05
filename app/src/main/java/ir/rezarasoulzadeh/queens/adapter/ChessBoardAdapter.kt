@@ -8,74 +8,26 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import ir.rezarasoulzadeh.queens.R
 
-class ChessBoardAdapter(private val context: Context, private val queens: ArrayList<Int>) : BaseAdapter() {
+class ChessBoardAdapter(private val context: Context, private val queens: ArrayList<Int>) :
+    BaseAdapter() {
 
-    private val cells = arrayListOf(
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white,
-        R.drawable.black,
-        R.drawable.white
-    )
+    private val cells = ArrayList<Int>()
+
+    init {
+        var cell = R.drawable.white
+        var counter = 0
+        for (i in 0 until ((queens.size) * (queens.size))) {
+            cells.add(cell)
+            if (counter != queens.size - 1) {
+                if (cell == R.drawable.white)
+                    cell = R.drawable.black
+                else
+                    cell = R.drawable.white
+            }
+            counter++
+            counter = counter % queens.size - 1
+        }
+    }
 
     override fun getCount(): Int {
         return cells.size
@@ -97,11 +49,11 @@ class ChessBoardAdapter(private val context: Context, private val queens: ArrayL
             imageView.layoutParams = AbsListView.LayoutParams(120, 120)
         }
         if (queens.isNotEmpty()) {
-            if(position in queens) {
-                if(cells[position] == R.drawable.white){
+            if (position in queens) {
+                if (cells[position] == R.drawable.white) {
                     imageView.setImageResource(R.drawable.white_queen)
                 }
-                if(cells[position] == R.drawable.black){
+                if (cells[position] == R.drawable.black) {
                     imageView.setImageResource(R.drawable.black_queen)
                 }
             } else {

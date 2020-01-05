@@ -1,6 +1,7 @@
 package ir.rezarasoulzadeh.queens.activity
 
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
@@ -27,9 +28,20 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar!!.hide()
 
-        val gridView = findViewById<GridView>(R.id.chessBoard)
+        // get device dimensions
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
 
-//        gridView.adapter = ChessBoardAdapter(this, queensLocations)
+        val width = displayMetrics.widthPixels
+
+        val gridView = findViewById<GridView>(R.id.chessBoard)
+        gridView.numColumns = 8
+
+        for (i in 0 until 8) {
+            queensLocations.add(-1)
+        }
+
+        gridView.adapter = ChessBoardAdapter(this, queensLocations, width)
 
         val context = this.applicationContext!!
         val inflater = this.layoutInflater
@@ -37,22 +49,25 @@ class MainActivity : AppCompatActivity() {
         customToast = CustomToast(context, inflater)
 
         plusButton.setOnClickListener {
-            customToast.show("فعلا فقط رو هشت تا جواب میده", "short ")
-//            val currentQueen = queenNumberTextView.text.toString().toInt()
-//            queenNumberTextView.text = (currentQueen + 1).toString()
+            val currentQueen = queenNumberTextView.text.toString().toInt()
+            queenNumberTextView.text = (currentQueen + 1).toString()
         }
 
         minusButton.setOnClickListener {
-            customToast.show("فعلا فقط رو هشت تا جواب میده", "short ")
-//            val currentQueen = queenNumberTextView.text.toString().toInt()
-//            queenNumberTextView.text = (currentQueen - 1).toString()
+            if (queenNumberTextView.text.toString().toInt() == 4) {
+                customToast.show("امکان پذیر نیست", "short")
+            } else {
+                val currentQueen = queenNumberTextView.text.toString().toInt()
+                queenNumberTextView.text = (currentQueen - 1).toString()
+            }
         }
 
         arrangeButton.setOnClickListener {
             queensCount = queenNumberTextView.text.toString().toInt()
             queens = Queen.solution(queensCount)
             queensLocations = QueensLocations(queens, queensCount).getQueensLocations()
-            gridView.adapter = ChessBoardAdapter(this, queensLocations)
+            gridView.numColumns = queensCount
+            gridView.adapter = ChessBoardAdapter(this, queensLocations, width)
         }
 
     }

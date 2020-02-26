@@ -49,8 +49,12 @@ class MainActivity : AppCompatActivity() {
         customToast = CustomToast(context, inflater)
 
         plusButton.setOnClickListener {
-            val currentQueen = queenNumberTextView.text.toString().toInt()
-            queenNumberTextView.text = (currentQueen + 1).toString()
+            if(queenNumberTextView.text.toString().toInt() == 40) {
+                customToast.show("امکان پذیر نیست", "short")
+            } else {
+                val currentQueen = queenNumberTextView.text.toString().toInt()
+                queenNumberTextView.text = (currentQueen + 1).toString()
+            }
         }
 
         minusButton.setOnClickListener {

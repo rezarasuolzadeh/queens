@@ -16,7 +16,7 @@ class CustomToast(private val context: Context, private val inflater: LayoutInfl
 
         val customToastView: View = inflater.inflate(R.layout.toast, null)
 
-        customToast.setGravity(Gravity.TOP, 0, 150)
+        customToast.setGravity(Gravity.CENTER, 0, 0)
         customToast.view = customToastView
         customToastView.toastText.text = message
 

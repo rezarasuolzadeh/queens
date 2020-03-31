@@ -24,10 +24,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        window.setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN)
-
-        supportActionBar!!.hide()
-
         // get device dimensions
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)

@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import ir.rezarasoulzadeh.queens.R
 
-class ChessBoardAdapter(
+class ChessAdapter(
     private val context: Context,
     private val queens: ArrayList<Int>,
     private val width: Int

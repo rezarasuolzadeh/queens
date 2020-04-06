@@ -11,17 +11,17 @@ import android.widget.GridView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import ir.rezarasoulzadeh.queens.R
-import ir.rezarasoulzadeh.queens.view.adapter.ChessBoardAdapter
+import ir.rezarasoulzadeh.queens.view.adapter.ChessAdapter
 import ir.rezarasoulzadeh.queens.service.utils.QueensLocations
 import ir.rezarasoulzadeh.queens.service.utils.Queen
 import ir.rezarasoulzadeh.queens.service.utils.CustomToast
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_for_queen.*
 import kotlinx.android.synthetic.main.dialog_for_exit.view.*
 import java.lang.Exception
 import java.util.*
 
 
-class MainActivity : AppCompatActivity() {
+class QueenActivity : AppCompatActivity() {
 
     private var queens = ArrayList<String>()
     private var queensLocations = ArrayList<Int>()
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_for_queen)
 
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             queensLocations.add(-1)
         }
 
-        gridView.adapter = ChessBoardAdapter(this, queensLocations, width)
+        gridView.adapter = ChessAdapter(this, queensLocations, width)
 
         val context = this.applicationContext!!
         val inflater = this.layoutInflater
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             queens = Queen.solution(queensCount)
             queensLocations = QueensLocations(queens, queensCount).getQueensLocations()
             gridView.numColumns = queensCount
-            gridView.adapter = ChessBoardAdapter(this, queensLocations, width)
+            gridView.adapter = ChessAdapter(this, queensLocations, width)
         }
     }
 
@@ -117,29 +117,6 @@ class MainActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 customToast.show("ابتدا مایکت را نصب کنید", "short")
             }
-        }
-
-        exitView.mailButton.setOnClickListener {
-            val intent = Intent(Intent.ACTION_SENDTO)
-            intent.type = "text/plain"
-            intent.data = Uri.parse("mailto:")
-            intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("reza.rassoulzadeh@gmail.com"))
-            intent.putExtra(Intent.EXTRA_SUBJECT, "معمای وزیر ها")
-            startActivity(Intent.createChooser(intent, "ارسال پیام از طریق:"))
-            exitAlertDialog.dismiss()
-        }
-
-        exitView.shareButton.setOnClickListener {
-            val productShareBody =
-                "معمای وزیر ها\nوزیر ها رو درست بچین\nلینک نصب:\n" + this.resources.getString(
-                    R.string.myketLink
-                )
-            val productShareIntent = Intent(Intent.ACTION_SEND)
-            productShareIntent.type = "text/plain"
-            productShareIntent.putExtra(Intent.EXTRA_SUBJECT, "معمای وزیر ها")
-            productShareIntent.putExtra(Intent.EXTRA_TEXT, productShareBody)
-            startActivity(Intent.createChooser(productShareIntent, "معرفی به دوستان"))
-            exitAlertDialog.dismiss()
         }
     }
 

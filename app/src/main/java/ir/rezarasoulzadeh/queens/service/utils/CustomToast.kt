@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
 import ir.rezarasoulzadeh.queens.R
-import kotlinx.android.synthetic.main.toast.view.*
+import kotlinx.android.synthetic.main.layout_for_toast.view.*
 
 class CustomToast(private val context: Context, private val inflater: LayoutInflater) {
 
@@ -14,7 +14,7 @@ class CustomToast(private val context: Context, private val inflater: LayoutInfl
 
         val customToast = Toast(context)
 
-        val customToastView: View = inflater.inflate(R.layout.toast, null)
+        val customToastView: View = inflater.inflate(R.layout.layout_for_toast, null)
 
         customToast.setGravity(Gravity.CENTER, 0, 0)
         customToast.view = customToastView

@@ -1,4 +1,4 @@
-package ir.rezarasoulzadeh.queens.toast
+package ir.rezarasoulzadeh.queens.service.utils
 
 import android.content.Context
 import android.view.Gravity

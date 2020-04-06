@@ -1,4 +1,4 @@
-package ir.rezarasoulzadeh.queens.adapter
+package ir.rezarasoulzadeh.queens.view.adapter
 
 import android.content.Context
 import android.view.View

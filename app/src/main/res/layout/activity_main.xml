@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FDC27F"
-    tools:context=".activity.MainActivity">
+    tools:context=".view.activity.MainActivity">
 
     <LinearLayout
         android:id="@+id/queensCountBox"

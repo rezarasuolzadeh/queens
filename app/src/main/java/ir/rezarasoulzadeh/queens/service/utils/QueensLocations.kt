@@ -1,4 +1,4 @@
-package ir.rezarasoulzadeh.queens.evaluate
+package ir.rezarasoulzadeh.queens.service.utils
 
 class QueensLocations(queensLocationsString: ArrayList<String>, queensCount: Int) {
 

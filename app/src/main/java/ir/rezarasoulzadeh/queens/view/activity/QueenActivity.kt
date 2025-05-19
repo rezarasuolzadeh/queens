@@ -1,6 +1,5 @@
 package ir.rezarasoulzadeh.queens.view.activity
 
-import android.os.Bundle
 import android.util.DisplayMetrics
 import android.widget.GridView
 import ir.rezarasoulzadeh.queens.R
@@ -20,10 +19,7 @@ class QueenActivity : BaseActivity<ActivityForQueenBinding>(
     private var queensCount = 0
     private lateinit var customToast: CustomToast
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_for_queen)
-
+    override fun onAfterCreate() {
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
 

@@ -1,10 +1,10 @@
-package ir.rezarasoulzadeh.queens.service.utils
+package ir.rezarasuolzadeh.queens.service.utils
 
 import android.content.Context
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.widget.Toast
-import ir.rezarasoulzadeh.queens.databinding.LayoutForToastBinding
+import ir.rezarasuolzadeh.queens.databinding.LayoutForToastBinding
 
 class CustomToast(private val context: Context, private val inflater: LayoutInflater) {
 

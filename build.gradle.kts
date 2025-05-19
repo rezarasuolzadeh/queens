@@ -1,12 +1,15 @@
 buildscript {
     repositories {
-        jcenter()
         google()
+        jcenter()
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.6.0")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10")
+        val gradle = "8.6.1"
+        classpath("com.android.tools.build:gradle:$gradle")
+
+        val kotlin = "1.9.10"
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin")
     }
 }
 

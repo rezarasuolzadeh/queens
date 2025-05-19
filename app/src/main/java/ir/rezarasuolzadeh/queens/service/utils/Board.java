@@ -1,4 +1,4 @@
-package ir.rezarasoulzadeh.queens.service.utils;
+package ir.rezarasuolzadeh.queens.service.utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

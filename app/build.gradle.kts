@@ -1,14 +1,14 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
+    id(id = "com.android.application")
+    id(id = "kotlin-android")
 }
 
 android {
-    namespace = "ir.rezarasoulzadeh.queens"
+    namespace = "ir.rezarasuolzadeh.queens"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "ir.rezarasoulzadeh.queens"
+        applicationId = "ir.rezarasuolzadeh.queens"
         minSdk = 23
         targetSdk = 35
         versionCode = 2
@@ -41,8 +41,14 @@ android {
 }
 
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("androidx.core:core-ktx:1.16.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.2.1")
+    implementation(dependencyNotation = fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+
+    val androidxAppCompat = "1.7.0"
+    implementation(dependencyNotation = "androidx.appcompat:appcompat:$androidxAppCompat")
+
+    val androidxCore = "1.16.0"
+    implementation(dependencyNotation = "androidx.core:core-ktx:$androidxCore")
+
+    val androidxConstraintLayout = "2.2.1"
+    implementation(dependencyNotation = "androidx.constraintlayout:constraintlayout:$androidxConstraintLayout")
 }

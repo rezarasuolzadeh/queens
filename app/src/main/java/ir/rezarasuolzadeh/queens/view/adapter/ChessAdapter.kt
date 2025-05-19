@@ -1,4 +1,4 @@
-package ir.rezarasoulzadeh.queens.view.adapter
+package ir.rezarasuolzadeh.queens.view.adapter
 
 import android.content.Context
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.AbsListView
 import android.widget.BaseAdapter
 import android.widget.ImageView
-import ir.rezarasoulzadeh.queens.R
+import ir.rezarasuolzadeh.queens.R
 
 class ChessAdapter(
     private val context: Context,

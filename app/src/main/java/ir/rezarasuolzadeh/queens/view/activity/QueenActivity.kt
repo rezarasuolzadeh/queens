@@ -1,14 +1,14 @@
-package ir.rezarasoulzadeh.queens.view.activity
+package ir.rezarasuolzadeh.queens.view.activity
 
 import android.util.DisplayMetrics
 import android.widget.GridView
-import ir.rezarasoulzadeh.queens.R
-import ir.rezarasoulzadeh.queens.databinding.ActivityForQueenBinding
-import ir.rezarasoulzadeh.queens.service.base.BaseActivity
-import ir.rezarasoulzadeh.queens.service.utils.CustomToast
-import ir.rezarasoulzadeh.queens.service.utils.Queen
-import ir.rezarasoulzadeh.queens.service.utils.QueensLocations
-import ir.rezarasoulzadeh.queens.view.adapter.ChessAdapter
+import ir.rezarasuolzadeh.queens.R
+import ir.rezarasuolzadeh.queens.databinding.ActivityForQueenBinding
+import ir.rezarasuolzadeh.queens.service.base.BaseActivity
+import ir.rezarasuolzadeh.queens.service.utils.CustomToast
+import ir.rezarasuolzadeh.queens.service.utils.Queen
+import ir.rezarasuolzadeh.queens.service.utils.QueensLocations
+import ir.rezarasuolzadeh.queens.view.adapter.ChessAdapter
 
 class QueenActivity : BaseActivity<ActivityForQueenBinding>(
     ActivityForQueenBinding::inflate

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toastText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="5dp"
+    android:background="@drawable/background_toast"
+    android:fontFamily="@font/vazir"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:textColor="#fff"
+    android:textSize="18sp"
+    android:textStyle="normal"
+    tools:text="متن پیام در این قسمت قرار می گیرد" />

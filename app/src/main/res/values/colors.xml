@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    // primary colour
-    <color name="colorPrimary">#633701</color>
-    <color name="colorPrimaryDark">#FDC27F</color>
-    <color name="colorAccent">#FFFFFF</color>
-
-    // other colour
     <color name="brown">#633701</color>
     <color name="cream">#FDC27F</color>
     <color name="white">#FFFFFF</color>

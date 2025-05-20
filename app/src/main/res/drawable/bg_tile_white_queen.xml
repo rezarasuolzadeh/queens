@@ -13,5 +13,5 @@
                 android:top="50dp" />
         </shape>
     </item>
-    <item android:drawable="@drawable/queen" />
+    <item android:drawable="@drawable/img_queen" />
 </layer-list>

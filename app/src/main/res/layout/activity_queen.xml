@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/left_button"
+            android:background="@drawable/bg_button_left"
             android:fontFamily="@font/vazir"
             android:text="@string/decrease"
             android:textColor="@color/white"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="20"
-            android:background="@drawable/box_background"
+            android:background="@drawable/bg_box"
             android:gravity="center"
             android:layoutDirection="ltr"
             android:orientation="horizontal">
@@ -53,7 +53,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:src="@drawable/queen"
+                android:src="@drawable/img_queen"
                 tools:ignore="ContentDescription" />
 
         </LinearLayout>
@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/right_button"
+            android:background="@drawable/bg_button_right"
             android:fontFamily="@font/vazir"
             android:text="@string/increase"
             android:textColor="@color/white"

@@ -18,17 +18,17 @@ class ChessAdapter(
     private val cells = ArrayList<Int>()
 
     init {
-        var cell = R.drawable.white
+        var cell = R.drawable.bg_tile_white
         var counter = 0
         for (i in 0 until ((queens.size) * (queens.size))) {
             cells.add(cell)
             if (queens.size % 2 == 0) {
                 if (counter != queens.size - 1) {
-                    cell = if (cell == R.drawable.white) R.drawable.black else R.drawable.white
+                    cell = if (cell == R.drawable.bg_tile_white) R.drawable.bg_tile_black else R.drawable.bg_tile_white
                 }
             } else {
                 if (counter != queens.size) {
-                    cell = if (cell == R.drawable.white) R.drawable.black else R.drawable.white
+                    cell = if (cell == R.drawable.bg_tile_white) R.drawable.bg_tile_black else R.drawable.bg_tile_white
                 }
             }
             counter = (counter + 1) % queens.size
@@ -56,11 +56,11 @@ class ChessAdapter(
         }
         if (queens.isNotEmpty()) {
             if (position in queens) {
-                if (cells[position] == R.drawable.white) {
-                    imageView.setImageResource(R.drawable.white_queen)
+                if (cells[position] == R.drawable.bg_tile_white) {
+                    imageView.setImageResource(R.drawable.bg_tile_white_queen)
                 }
-                if (cells[position] == R.drawable.black) {
-                    imageView.setImageResource(R.drawable.black_queen)
+                if (cells[position] == R.drawable.bg_tile_black) {
+                    imageView.setImageResource(R.drawable.bg_tile_black_queen)
                 }
             } else {
                 imageView.setImageResource(cells[position])

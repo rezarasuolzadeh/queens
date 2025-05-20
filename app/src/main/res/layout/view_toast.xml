@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     android:layout_margin="5dp"
-    android:background="@drawable/background_toast"
+    android:background="@drawable/bg_toast"
     android:fontFamily="@font/vazir"
     android:orientation="horizontal"
     android:padding="10dp"

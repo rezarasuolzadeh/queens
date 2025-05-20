@@ -3,8 +3,8 @@ package ir.rezarasuolzadeh.queens.view.activity
 import android.util.DisplayMetrics
 import ir.rezarasuolzadeh.queens.databinding.ActivityQueenBinding
 import ir.rezarasuolzadeh.queens.utils.base.BaseActivity
-import ir.rezarasuolzadeh.queens.service.utils.Queen
-import ir.rezarasuolzadeh.queens.service.utils.QueensLocations
+import ir.rezarasuolzadeh.queens.algorithm.Queen
+import ir.rezarasuolzadeh.queens.algorithm.QueensLocations
 import ir.rezarasuolzadeh.queens.utils.MAX_QUEEN_COUNT
 import ir.rezarasuolzadeh.queens.utils.MIN_QUEEN_COUNT
 import ir.rezarasuolzadeh.queens.utils.extensions.getInteger

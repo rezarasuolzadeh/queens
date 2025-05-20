@@ -1,4 +1,4 @@
-package ir.rezarasuolzadeh.queens.service.utils;
+package ir.rezarasuolzadeh.queens.algorithm;
 
 import java.util.ArrayList;
 import java.util.Arrays;

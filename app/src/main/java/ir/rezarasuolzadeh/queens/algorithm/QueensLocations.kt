@@ -1,4 +1,4 @@
-package ir.rezarasuolzadeh.queens.service.utils
+package ir.rezarasuolzadeh.queens.algorithm
 
 class QueensLocations(queensLocationsString: ArrayList<String>, queensCount: Int) {
 

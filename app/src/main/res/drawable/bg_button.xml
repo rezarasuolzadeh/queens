@@ -6,9 +6,7 @@
             <stroke
                 android:width="1dp"
                 android:color="@color/black" />
-            <corners
-                android:bottomRightRadius="15dp"
-                android:topRightRadius="15dp" />
+            <corners android:radius="15dp" />
             <solid android:color="@color/brown" />
         </shape>
     </item>
@@ -18,9 +16,7 @@
             <stroke
                 android:width="1dp"
                 android:color="@color/black" />
-            <corners
-                android:bottomRightRadius="15dp"
-                android:topRightRadius="15dp" />
+            <corners android:radius="15dp" />
             <solid android:color="@color/ripple" />
         </shape>
     </item>

@@ -51,4 +51,7 @@ dependencies {
 
     val androidxConstraintLayout = "2.2.1"
     implementation(dependencyNotation = "androidx.constraintlayout:constraintlayout:$androidxConstraintLayout")
+
+    val lottie = "6.6.4"
+    implementation("com.airbnb.android:lottie:$lottie")
 }

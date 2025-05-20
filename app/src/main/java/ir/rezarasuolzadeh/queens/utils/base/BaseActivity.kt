@@ -1,4 +1,4 @@
-package ir.rezarasuolzadeh.queens.service.base
+package ir.rezarasuolzadeh.queens.utils.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

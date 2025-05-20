@@ -20,12 +20,6 @@ public class Queen {
         return solution.print();
     }
 
-    /**
-     * The Genetic Algorithm, based on the pseudocode provided in lecture.
-     *
-     * @param boards
-     * @return a solved Board
-     */
     public static Board GeneticAlgorithm(Board[] boards) {
         Board[] population = boards;
         Random random = new Random();
@@ -37,7 +31,6 @@ public class Queen {
 
             sortByFitness(population);
 
-            //checking if the best board in the population is at the maximum fitness value
             if (population[population.length - 1].getFitness() == population[0].maxFitness) {
                 totalGenerationCount = totalGenerationCount + generation;
                 return population[population.length - 1];
@@ -48,7 +41,7 @@ public class Queen {
                 Board boardY = getChild(population);
                 Board child = boardX.reproduceWith(boardY);
 
-                if (random.nextDouble() < MUTATION_PROBABILITY) { /* small random probability*/
+                if (random.nextDouble() < MUTATION_PROBABILITY) {
                     child = child.mutate();
                 }
 
@@ -62,26 +55,17 @@ public class Queen {
         return null;
     }
 
-    /**
-     * Sorting the population of boards[] by the fitness value. The fitness value is the number of non-attacking queen pairs.
-     * For Genetic Algorithm
-     *
-     * @param boards
-     */
     public static void sortByFitness(Board[] boards) {
-        double total = 0;    //stores the total fitness of all boards in the boards[] array
+        double total = 0;
 
-        //sum the total fitness of the population
-        for (int i = 0; i < boards.length; i++) {
-            total = total + boards[i].getFitness();
+        for (Board board : boards) {
+            total = total + board.getFitness();
         }
 
-        //to turn each fitnessArray[] value to a percentage of its value divided by the total fitness
-        for (int i = 0; i < boards.length; i++) {
-            boards[i].fitnessProbability = boards[i].fitness / total;
+        for (Board board : boards) {
+            board.fitnessProbability = board.fitness / total;
         }
 
-        //perform selection sort
         for (int i = 0; i < boards.length - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < boards.length; j++) {
@@ -89,22 +73,14 @@ public class Queen {
                     minIndex = j;
                 }
             }
-
             Board tmp = boards[minIndex];
             boards[minIndex] = boards[i];
             boards[i] = tmp;
         }
     }
 
-    /**
-     * For Simulated Annealing
-     *
-     * @param boards, which are already be sorted by fitness
-     * @return a Board randomly selected among the top 10 boards with the best fitness
-     */
     public static Board getChild(Board[] boards) {
         Random random = new Random();
-        //this calculation returns a random int among the last 10 index values
         int index = (boards.length - 10) + random.nextInt(10);
         return boards[index];
     }

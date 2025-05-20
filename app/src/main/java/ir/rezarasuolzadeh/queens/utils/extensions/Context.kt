@@ -1,4 +1,4 @@
-package ir.rezarasuolzadeh.queens.extensions
+package ir.rezarasuolzadeh.queens.utils.extensions
 
 import android.content.Context
 import android.view.Gravity

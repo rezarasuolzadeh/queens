@@ -24,17 +24,11 @@ class ChessAdapter(
             cells.add(cell)
             if (queens.size % 2 == 0) {
                 if (counter != queens.size - 1) {
-                    if (cell == R.drawable.white)
-                        cell = R.drawable.black
-                    else
-                        cell = R.drawable.white
+                    cell = if (cell == R.drawable.white) R.drawable.black else R.drawable.white
                 }
             } else {
                 if (counter != queens.size) {
-                    if (cell == R.drawable.white)
-                        cell = R.drawable.black
-                    else
-                        cell = R.drawable.white
+                    cell = if (cell == R.drawable.white) R.drawable.black else R.drawable.white
                 }
             }
             counter = (counter + 1) % queens.size

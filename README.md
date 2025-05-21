@@ -12,3 +12,10 @@ You can download the application from here:
 
 ### Shots
 This is some shots from application in some situations:
+<p align="center">
+    <img alt="Passengers" src="/shots/queens_1.png"  width="180" height="380">
+    &nbsp;&nbsp;&nbsp;
+    <img alt="Passengers" src="/shots/queens_2.png"  width="180" height="380">
+    &nbsp;&nbsp;&nbsp;
+    <img alt="Passengers" src="/shots/queens_3.png"  width="180" height="380">
+</p>

@@ -1,9 +1,14 @@
-# Queens
-this app solve the n queen problem for you with genetic algorithm.
+### Queens
+This application solve n-queens puzzle in a simple android application. You can control count of queens and arrange the queens according to your choosen queen count.
 
-### shots
-<p float="left">
-    <img alt="Passengers" src="/shots/shot_1.png"  width="180" height="380"> 
-    <img alt="Passengers" src="/shots/shot_2.png"  width="180" height="380">
-    <img alt="Passengers" src="/shots/shot_3.png"  width="180" height="380"> 
+### Download app
+You can download the application from here:
+<br>&nbsp;<br>
+<p align="center">
+    <a href="https://github.com/rezarasuolzadeh/queens/releases/download/1.2.0/queens.1.2.0.apk">
+        <img alt="Github" src="/shots/github.png" width="180" height="55">
+    </a>
 </p>
+
+### Shots
+This is some shots from application in some situations:
